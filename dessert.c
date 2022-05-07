@@ -1,5 +1,19 @@
 "desert.h"
 
+int selectProduct()
+{
+    int n;
+    printf("\n**********************************\n");
+    printf("1. 디저트 추가\n");
+    printf("2. 디저트 보기\n");
+    printf("3. 디저트 수정\n");
+    printf("4. 디저트 삭제\n");
+    printf("\n**********************************\n");
+    printf("원하는 메뉴를 선택해주세요\n");
+    scanf("%d", &n);
+    getchar();
+}
+
 void UpdateDS(Dessert *ds)
 {
     int num;
