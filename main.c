@@ -1,11 +1,10 @@
 #include "dessert.h"
-#include "manager.h"
 
 int main(void){
     int count = 0; // 데이터개수
     int menu = 0;
 
-    Dessert d[100];
+    Dessert p[100];
     int index = 0; // 데이터번호
 
     count = loadData(p);
@@ -51,6 +50,7 @@ int main(void){
             scanf("%d", &deleteok);
             if(deleteok == 1){
                 DeleteDS
+                count -= 1;
             }
             printf("=>삭제됨!\n");
         }
