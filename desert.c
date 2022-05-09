@@ -1,9 +1,33 @@
-"desert.h"
+#include "desert.h"
+    
+int CreateDs(Dessert *DS)
+{
+    printf("ì´ë¦„ì€? ");
+    scanf("%[^\n]", p->name);
+    getchar();
+
+    printf("ê°€ê²©ì€? ");
+    scanf("%d", &p->price);
+    getchar();
+
+    printf("ì¹¼ë¡œë¦¬ëŠ”?");
+    scanf("%d", &p->cal);
+    getchar();
+
+    return 1;
+}
+
+void ReadDS(Dessert *DS)
+{
+    printf("    %2s %2d %3d\n", p.name, p.price, p.check);
+}
+
+    
 
 void UpdateDS(Dessert *ds)
 {
     int num;
-    printf("¾÷µ¥ÀÌÆ®ÇÏ°í ½ÍÀº µğÀúÆ® ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+    printf("ì—…ë°ì´íŠ¸í•˜ê³  ì‹¶ì€ ë””ì €íŠ¸ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
     scanf("%d", &num);
     getchar();
     num-=1;
@@ -12,10 +36,10 @@ void UpdateDS(Dessert *ds)
 void DeleteDS(Dessert *ds)
 {
     int num;
-    printf("»èÁ¦ÇÏ°í ½ÍÀº µğÀúÆ® ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+    printf("ì‚­ì œí•˜ê³  ì‹¶ì€ ë””ì €íŠ¸ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
     scanf("%d", &num);
     getchar();
     num-=1;
     ds[num].price = -1;
-    printf("»èÁ¦°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.\n");
+    printf("ì‚­ì œê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.\n");
 }
