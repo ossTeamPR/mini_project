@@ -6,8 +6,8 @@ typedef struct{
     int cal; // Ä®·Î¸®
 } Dessert;
 
-void CreateDS(Dessert*, int);
-void ReadDS(Dessert*);
+int CreateDS(Dessert*, index);
+void ReadDS(Dessert*, index);
 void UpdateDS(Dessert*);
 void DeleteDS(Dessert*);
 void ReadOneDS(Dessert, int);
