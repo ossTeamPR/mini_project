@@ -1,25 +1,25 @@
-#include "desert.h"
+#include "dessert.h"
     
 int CreateDs(Dessert *ds)
 {
     printf("이름은? ");
-    scanf("%[^\n]", p->name);
+    scanf("%[^\n]", ds->name);
     getchar();
 
     printf("가격은? ");
-    scanf("%d", &p->price);
+    scanf("%d", &ds->price);
     getchar();
 
     printf("칼로리는?");
-    scanf("%d", &p->cal);
+    scanf("%d", &ds->cal);
     getchar();
 
     return 1;
 }
 
-void ReadDS(Dessert *ds)
+void ReadDS(Dessert ds)
 {
-    printf("    %2s %2d %3d\n", p.name, p.price, p.check);
+    printf("    %2s %2d %3d\n", ds.name, ds.price, ds.cal);
 }
 
 int selectProduct()
