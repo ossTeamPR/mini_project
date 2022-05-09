@@ -1,6 +1,6 @@
 #include "desert.h"
     
-int CreateDs(Dessert *DS)
+int CreateDs(Dessert *ds)
 {
     printf("이름은? ");
     scanf("%[^\n]", p->name);
@@ -17,7 +17,7 @@ int CreateDs(Dessert *DS)
     return 1;
 }
 
-void ReadDS(Dessert *DS)
+void ReadDS(Dessert *ds)
 {
     printf("    %2s %2d %3d\n", p.name, p.price, p.check);
 }
