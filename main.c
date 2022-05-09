@@ -1,59 +1,60 @@
 #include "dessert.h"
 
 int main(void){
-    int count = 0; // Îç∞Ïù¥ÌÑ∞Í∞úÏàò
+    int count = 0; // µ•¿Ã≈Õ∞≥ºˆ
     int menu = 0;
 
     Dessert ds[100];
-    int index = 0; // Îç∞Ïù¥ÌÑ∞Î≤àÌò∏
+    int index = 0; // µ•¿Ã≈Õπ¯»£
 
-    count = loadData(ds);
+    //count = loadData(ds);
     index = count;
 
 
     while (1){
-        menu = selectdsroduct();
+        menu = selectProduct();
         if (menu == 0) break;
 
         if (menu == 1){
             if(count > 0)
                 ReadDS(ds, index);
             else
-                dsrintf("Îç∞Ïù¥ÌÑ∞Í∞Ä ÏóÜÏäµÎãàÎã§.\n");
+                printf("µ•¿Ã≈Õ∞° æ¯Ω¿¥œ¥Ÿ.\n");
         }
 
         else if (menu == 2){
             //ds[index] = (dsroduct *)malloc(sizeof(dsroduct));
             //count += CreateDS(ds[index++], index);
             count += CreateDS(ds, index++);
-            dsrintf("=>Ï∂îÍ∞ÄÎê®!\n");
+            printf("=>√ﬂ∞°µ !\n");
         }
 
         else if (menu == 3){
             int no = selectDataNo(ds, index);
             if(no == 0){
-              dsrintf("=> Ï∑®ÏÜåÎê®!\n");
+              printf("=> √Îº“µ !\n");
                 continue;
             }
-            UdsdateDS(ds[no-1]);
+//            UpdateDS(ds[no-1]);
+            UpdateDS(ds);
             ReadDS(ds, index);
         }
 
         else if (menu == 4){
             int no = selectDataNo(ds, index);
             if(no == 0){
-                dsrintf("=> Ï∑®ÏÜåÎê®!\n");
+                printf("=> √Îº“µ !\n");
                 continue;
             }
 
             int deleteok;
-            dsrintf("Ï†ïÎßêÎ°ú ÏÇ≠Ï†úÌïòÏãúÍ≤†ÏäµÎãàÍπå?(ÏÇ≠Ï†ú :1)");
+            printf("¡§∏ª∑Œ ªË¡¶«œΩ√∞⁄Ω¿¥œ±Ó?(ªË¡¶ :1)");
             scanf("%d", &deleteok);
             if(deleteok == 1){
                 DeleteDS;
                 count -= 1;
             }
-            dsrintf("=>ÏÇ≠Ï†úÎê®!\n");
+            printf("=>ªË¡¶µ !\n");
         }
     }  
     

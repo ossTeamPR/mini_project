@@ -1,17 +1,17 @@
 #include "dessert.h"
     
-int CreateDs(Dessert *ds, int index)
+int CreateDS(Dessert *ds, int index)
 {
-    printf("ì´ë¦„ì€? ");
-    scanf("%[^\n]", ds->name);
+    printf("ÀÌ¸§Àº? ");
+    scanf("%[^\n]", ds[index].name);
     getchar();
 
-    printf("ê°€ê²©ì€? ");
-    scanf("%d", &ds->price);
+    printf("°¡°İÀº? ");
+    scanf("%d", &ds[index].price);
     getchar();
 
-    printf("ì¹¼ë¡œë¦¬ëŠ”?");
-    scanf("%d", &ds->cal);
+    printf("Ä®·Î¸®´Â?");
+    scanf("%d", &ds[index].cal);
     getchar();
 
     return 1;
@@ -26,20 +26,30 @@ int selectProduct()
 {
     int n;
     printf("\n**********************************\n");
-    printf("1. ë””ì €íŠ¸ ì¶”ê°€\n");
-    printf("2. ë””ì €íŠ¸ ë³´ê¸°\n");
-    printf("3. ë””ì €íŠ¸ ìˆ˜ì •\n");
-    printf("4. ë””ì €íŠ¸ ì‚­ì œ\n");
+    printf("1. µğÀúÆ® Ãß°¡\n");
+    printf("2. µğÀúÆ® º¸±â\n");
+    printf("3. µğÀúÆ® ¼öÁ¤\n");
+    printf("4. µğÀúÆ® »èÁ¦\n");
     printf("\n**********************************\n");
-    printf("ì›í•˜ëŠ” ë©”ë‰´ë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”\n");
+    printf("¿øÇÏ´Â ¸Ş´º¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä\n");
     scanf("%d", &n);
     getchar();
 }
 
+int selectDataNo(Dessert *ds, int count){
+    int no;
+    // listProduct(ds, count);
+    printf("¹øÈ£´Â (Ãë¼Ò :0)? ");
+    scanf("%d", &no);
+    getchar();
+    return no;
+} // ¼öÁ¤ ¹× »èÁ¦¿¡ ÇÊ¿äÇÑ Æ¯Á¤ ¼ıÀÚ ¹Ş±â
+
+
 void UpdateDS(Dessert *ds)
 {
     int num;
-    printf("ì—…ë°ì´íŠ¸í•˜ê³  ì‹¶ì€ ë””ì €íŠ¸ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
+    printf("¾÷µ¥ÀÌÆ®ÇÏ°í ½ÍÀº µğÀúÆ® ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
     scanf("%d", &num);
     getchar();
     num-=1;
@@ -49,10 +59,10 @@ void UpdateDS(Dessert *ds)
 void DeleteDS(Dessert *ds)
 {
     int num;
-    printf("ì‚­ì œí•˜ê³  ì‹¶ì€ ë””ì €íŠ¸ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
+    printf("»èÁ¦ÇÏ°í ½ÍÀº µğÀúÆ® ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
     scanf("%d", &num);
     getchar();
     num-=1;
     ds[num].price = -1;
-    printf("ì‚­ì œê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.\n");
+    printf("»èÁ¦°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.\n");
 }

@@ -6,9 +6,11 @@ typedef struct{
     int cal; // Ä®·Î¸®
 } Dessert;
 
-int CreateDS(Dessert*, index);
-void ReadDS(Dessert*, index);
+int CreateDS(Dessert*, int);
+void ReadDS(Dessert*, int);
 void UpdateDS(Dessert*);
 void DeleteDS(Dessert*);
 void ReadOneDS(Dessert, int);
+int selectProduct();
+int selectDataNo(Dessert*, int);
 int menu();
