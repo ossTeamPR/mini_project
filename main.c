@@ -16,17 +16,15 @@ int main(void){
         if (menu == 0) break;
 
         if (menu == 1){
-            if(count > 0)
-                ReadDS(ds, index);
-            else
-                printf("데이터가 없습니다.\n");
+            count += CreateDS(&ds[index++]);
+            printf("=>추가됨!\n");
         }
 
         else if (menu == 2){
-            //ds[index] = (dsroduct *)malloc(sizeof(dsroduct));
-            //count += CreateDS(ds[index++], index);
-            count += CreateDS(ds, index++);
-            printf("=>추가됨!\n");
+            if(count > 0)
+                ListDS(ds, index);
+            else
+                printf("데이터가 없습니다.\n");
         }
 
         else if (menu == 3){
@@ -36,8 +34,8 @@ int main(void){
                 continue;
             }
 //            UpdateDS(ds[no-1]);
-            UpdateDS(ds);
-            ReadDS(ds, index);
+            UpdateDS(ds, no);
+            ListDS(ds, index);
         }
 
         else if (menu == 4){

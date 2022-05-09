@@ -1,25 +1,37 @@
 #include "dessert.h"
     
-int CreateDS(Dessert *ds, int index)
+int CreateDS(Dessert *ds)
 {
     printf("이름은? ");
-    scanf("%[^\n]", ds[index].name);
+    scanf("%[^\n]", ds->name);
     getchar();
 
     printf("가격은? ");
-    scanf("%d", &ds[index].price);
+    scanf("%d", &ds->price);
     getchar();
 
-    printf("칼로리는?");
-    scanf("%d", &ds[index].cal);
+    printf("칼로리는? ");
+    scanf("%d", &ds->cal);
     getchar();
 
     return 1;
 }
 
-void ReadDS(Dessert *ds, int index)
+void ReadDS(Dessert ds)
 {
-    printf("    %2s %2d %3d\n", ds[index].name, ds[index].price, ds[index].cal);
+    printf(" %2s %2d %3d\n", ds.name, ds.price, ds.cal);
+}
+
+void ListDS(Dessert *ds, int count)
+{
+    printf("\nNo 디저트이름 가격 칼로리\n");
+    printf("==========================\n");
+    for(int i = 0; i < count; i++){
+        if(ds[i].price == -1) continue;
+        printf("%2d", i+1);
+        ReadDS(ds[i]);
+    }
+    printf("\n");
 }
 
 int selectProduct()
@@ -34,6 +46,8 @@ int selectProduct()
     printf("원하는 메뉴를 선택해주세요\n");
     scanf("%d", &n);
     getchar();
+
+    return n;
 }
 
 int selectDataNo(Dessert *ds, int count){
@@ -46,14 +60,14 @@ int selectDataNo(Dessert *ds, int count){
 } // 수정 및 삭제에 필요한 특정 숫자 받기
 
 
-void UpdateDS(Dessert *ds)
+void UpdateDS(Dessert *ds, int no)
 {
-    int num;
+    /*int num;
     printf("업데이트하고 싶은 디저트 번호를 입력하세요: ");
     scanf("%d", &num);
     getchar();
-    num-=1;
-    CreateDS(ds, num);
+    num-=1;*/ //어차피 selectDataNo 에서 업데이트 하고 싶은 번호를 불러오는 거라 일단 주석처리함
+    CreateDS(&ds[no-1]);
 }
 
 void DeleteDS(Dessert *ds)

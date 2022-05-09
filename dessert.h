@@ -6,9 +6,10 @@ typedef struct{
     int cal; // Ä®·Î¸®
 } Dessert;
 
-int CreateDS(Dessert*, int);
-void ReadDS(Dessert*, int);
-void UpdateDS(Dessert*);
+int CreateDS(Dessert*);
+void ReadDS(Dessert);
+void ListDS(Dessert*, int);
+void UpdateDS(Dessert*, int);
 void DeleteDS(Dessert*);
 void ReadOneDS(Dessert, int);
 int selectProduct();
