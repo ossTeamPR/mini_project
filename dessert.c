@@ -70,13 +70,13 @@ void UpdateDS(Dessert *ds, int no)
     CreateDS(&ds[no-1]);
 }
 
-void DeleteDS(Dessert *ds)
+void DeleteDS(Dessert *ds, int no)
 {
-    int num;
+    /*int num;
     printf("삭제하고 싶은 디저트 번호를 입력하세요: ");
     scanf("%d", &num);
     getchar();
-    num-=1;
-    ds[num].price = -1;
+    num-=1;*/
+    ds[no-1].price = -1;
     printf("삭제가 완료되었습니다.\n");
 }

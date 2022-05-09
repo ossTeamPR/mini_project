@@ -49,7 +49,7 @@ int main(void){
             printf("정말로 삭제하시겠습니까?(삭제 :1)");
             scanf("%d", &deleteok);
             if(deleteok == 1){
-                DeleteDS;
+                DeleteDS(ds, no);
                 count -= 1;
             }
             printf("=>삭제됨!\n");

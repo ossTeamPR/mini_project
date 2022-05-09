@@ -10,7 +10,7 @@ int CreateDS(Dessert*);
 void ReadDS(Dessert);
 void ListDS(Dessert*, int);
 void UpdateDS(Dessert*, int);
-void DeleteDS(Dessert*);
+void DeleteDS(Dessert*, int);
 void ReadOneDS(Dessert, int);
 int selectProduct();
 int selectDataNo(Dessert*, int);
