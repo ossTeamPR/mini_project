@@ -22,18 +22,16 @@ void ReadDS(Dessert *ds)
     printf("    %2s %2d %3d\n", p.name, p.price, p.check);
 }
 
-    
-
 int selectProduct()
 {
     int n;
     printf("\n**********************************\n");
-    printf("1. µğÀúÆ® Ãß°¡\n");
-    printf("2. µğÀúÆ® º¸±â\n");
-    printf("3. µğÀúÆ® ¼öÁ¤\n");
-    printf("4. µğÀúÆ® »èÁ¦\n");
+    printf("1. ë””ì €íŠ¸ ì¶”ê°€\n");
+    printf("2. ë””ì €íŠ¸ ë³´ê¸°\n");
+    printf("3. ë””ì €íŠ¸ ìˆ˜ì •\n");
+    printf("4. ë””ì €íŠ¸ ì‚­ì œ\n");
     printf("\n**********************************\n");
-    printf("¿øÇÏ´Â ¸Ş´º¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä\n");
+    printf("ì›í•˜ëŠ” ë©”ë‰´ë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”\n");
     scanf("%d", &n);
     getchar();
 }
@@ -47,6 +45,7 @@ void UpdateDS(Dessert *ds)
     num-=1;
     CreateDS(ds, num);
 }
+
 void DeleteDS(Dessert *ds)
 {
     int num;
