@@ -62,21 +62,21 @@ int selectDataNo(Dessert *ds, int count){
 
 void UpdateDS(Dessert *ds, int no)
 {
-    /*int num;
-    printf("업데이트하고 싶은 디저트 번호를 입력하세요: ");
-    scanf("%d", &num);
-    getchar();
-    num-=1;*/ //어차피 selectDataNo 에서 업데이트 하고 싶은 번호를 불러오는 거라 일단 주석처리함
     CreateDS(&ds[no-1]);
 }
 
 void DeleteDS(Dessert *ds, int no)
 {
-    /*int num;
-    printf("삭제하고 싶은 디저트 번호를 입력하세요: ");
-    scanf("%d", &num);
-    getchar();
-    num-=1;*/
     ds[no-1].price = -1;
     printf("삭제가 완료되었습니다.\n");
+}
+
+void saveData(Dessert *ds, int count)
+{
+    File *fp;
+    fp = fopen("DessertData.txt", "w");
+    for (int i = 0; i < count; i++)
+    {
+        if (ds[i].cal >= 0) fprintf(fp, "%d %d %s\n",ds[i].price, ds[i].cal, ds[i].name);
+    }
 }

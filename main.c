@@ -1,4 +1,4 @@
-#include "dessert.h"
+#include "dessert.c"
 
 int main(void){
     int count = 0; // 데이터개수
