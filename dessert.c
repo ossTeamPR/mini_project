@@ -102,7 +102,7 @@ int loadData(Dessert *ds)
         //ds[i] = (Dessert *)malloc(sizeof(Dessert));
         fscanf(fp, "%d", &ds[i].price);
         fscanf(fp, "%d", &ds[i].cal);
-        fscanf(fp, "%s", ds[i].name);
+        fscanf(fp, "%[^\n]s", ds[i].name);
         if(feof(fp)) break;
     }
 
