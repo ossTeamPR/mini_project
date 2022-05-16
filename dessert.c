@@ -42,8 +42,11 @@ int selectProduct()
     printf("2. 디저트 보기\n");
     printf("3. 디저트 수정\n");
     printf("4. 디저트 삭제\n");
+    printf("5. 디저트 저장\n");
+    printf("0. 프로그램 종료\n");
     printf("\n**********************************\n");
     printf("원하는 메뉴를 선택해주세요\n");
+    printf("=> ");
     scanf("%d", &n);
     getchar();
 
@@ -73,10 +76,37 @@ void DeleteDS(Dessert *ds, int no)
 
 void saveData(Dessert *ds, int count)
 {
-    File *fp;
+    FILE *fp;
     fp = fopen("DessertData.txt", "w");
     for (int i = 0; i < count; i++)
     {
         if (ds[i].cal >= 0) fprintf(fp, "%d %d %s\n",ds[i].price, ds[i].cal, ds[i].name);
     }
+
+    fclose(fp);
+    printf("=> 저장됨! ");
+}
+
+int loadData(Dessert *ds)
+{
+    int i = 0;
+    FILE *fp;
+    fp = fopen("DessertData.txt", "rt");
+
+    if (fp == NULL){
+        printf("=> 파일 없음\n");
+        return 0;
+    }
+
+    for(; i < 100; i++){
+        //ds[i] = (Dessert *)malloc(sizeof(Dessert));
+        fscanf(fp, "%d", &ds[i].price);
+        fscanf(fp, "%d", &ds[i].cal);
+        fscanf(fp, "%s", ds[i].name);
+        if(feof(fp)) break;
+    }
+
+    fclose(fp);
+    printf("=> 로딩 성공!\n");
+    return i;
 }
